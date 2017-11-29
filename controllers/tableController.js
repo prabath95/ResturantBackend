@@ -21,7 +21,7 @@ router.post('/table/new', function(req, res) {
         else if(TableRet == null || TableRet == undefined){
             table.save(function(err) {
                 if (err) {
-                res.send(err);
+                res.send(err); // comment
                 }
                 res.json({
                     success:true,
