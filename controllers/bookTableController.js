@@ -44,7 +44,7 @@ router.post('/booktable/new', function (req, res) {
                     res.json({
                         success: true,
                         msg: 'Booking Sucessful'
-                    });//comment
+                    });
                 });
             } else {
                 res.json({
