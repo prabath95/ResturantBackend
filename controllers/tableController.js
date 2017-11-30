@@ -59,7 +59,7 @@ router.delete('/table/delete',function(req,res){
         if(err){
             res.json({
                 success:false,
-                msg:'table Does Not Exist'
+                msg:'Table Does Not Exist'
             });
         }
         else if(table != null || table != undefined){
@@ -72,7 +72,7 @@ router.delete('/table/delete',function(req,res){
                 }else{
                     res.json({
                         success:true,
-                        msg:'table Deleted'
+                        msg:'Table Deleted'
                     });
                 }
             });
@@ -82,6 +82,24 @@ router.delete('/table/delete',function(req,res){
 
 //--------------------------------------------Update TABLE---------------------------------------------------------------
 
-
+router.put('/table/update',function(req,res){    
+    var update = {
+        tableNo: req.body.tableNo,
+        noOfChairs: req.body.noOfChairs
+    }
+    modalTable.findOneAndUpdate({_id : req.body.id},update,{},function(err,out){
+        if(err){
+            res.json({
+                success:false,
+                msg:'Table Update Fail'
+            });
+        }else{
+            res.json({
+                success:true,
+                msg:'Table sucessfully Updated'
+            });
+        }
+    });
+});
 
 module.exports = router; 
