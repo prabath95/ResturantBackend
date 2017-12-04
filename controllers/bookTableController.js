@@ -74,7 +74,35 @@ function compareDates(start, end, data) {
     }
     return isCorrect;
 }
-//--------------------------------------------ADD Booking---------------------------------------------------------------
+//--------------------------------------------GET ALL Booking---------------------------------------------------------------
+router.get('/book/getall',function(req,res){
+    modalTable.find(function(err,bookings){
+        if(err){
+            res.json({
+                success: true,
+                msg: 'Booking Sucessful'
+            });
+        }else{
+            res.json(bookings);
+        }
+    });
+});
 
+//--------------------------------------------DELETE Booking---------------------------------------------------------------
+router.delete('/book/delete',function(req,res){
+    modalTable.remove({_id:req.body.ID},function(err,response){
+        if(err){
+            res.json({
+                success: true,
+                msg: 'Error !!'
+            });
+        }else {
+            res.json({
+                success: true,
+                msg: response
+            });
+        }
+    });
+});
 
 module.exports = router; 

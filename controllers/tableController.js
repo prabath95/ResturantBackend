@@ -38,7 +38,7 @@ router.post('/table/new', function(req, res) {
   });
 
 
-//--------------------------------------------ADD TABLE---------------------------------------------------------------
+//--------------------------------------------GET ALL TABLES---------------------------------------------------------------
 router.get('/table/getall', function(req,res) {
     modalTable.find(function(err,tables){
         if(err){
@@ -53,7 +53,7 @@ router.get('/table/getall', function(req,res) {
     });
 });
 
-//--------------------------------------------ADD TABLE---------------------------------------------------------------
+//--------------------------------------------DELETE TABLE---------------------------------------------------------------
 router.delete('/table/delete',function(req,res){
     modalTable.findOne({tableNo:req.body.tableNo},function(err,table){
         if(err){
