@@ -9,12 +9,16 @@ router.use(bodyParser.json());
 //--------------------------------------------ADD Booking---------------------------------------------------------------
 router.post('/booktable/new', function (req, res) {
     var table = new modalTable();
+    table.userName = req.body.userName;
+    table.email = req.body.email;
     table.tableNO = req.body.tableNo;
-    table.peopleCount = req.body.peopleCount;
     table.Date = req.body.Date;
     table.StartTime = req.body.StartTime;
     table.EndTime = req.body.EndTime;
     table.contact = req.body.contact;
+    table.price = req.body.price;
+    table.comments = req.body.comments;
+    
     modalTable.find({ Date: req.body.Date }, function (error,TableRet) {
         if (error) {
             res.json({

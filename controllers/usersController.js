@@ -60,7 +60,8 @@ router.post('/user/new', function(req, res) {
           else if(req.body.password == user.password){
             res.json({
                 success:true,
-                msg:'Sucessfully logged in'
+                msg:'Sucessfully logged in',
+                user:user.Email
             });
           }else{
               res.json({

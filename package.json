@@ -16,7 +16,7 @@
     "express-session": "^1.15.2",
     "jwt-simple": "^0.5.1",
     "mongoose": "^4.13.4",
-    "nodemon": "^1.12.1",
+    "nodemon": "^1.13.3",
     "passport": "^0.3.2",
     "passport-jwt": "^2.2.1"
   }

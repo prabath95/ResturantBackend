@@ -2,12 +2,16 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var bookTableSchema = new Schema({
-  tableNO:{
+  userName:{
     type: String,
     required: true
   },
-  peopleCount: {
-    type: Number,
+  email:{
+    type: String,
+    required: true
+  },
+  tableNO:{
+    type: String,
     required: true
   },
   Date: {
@@ -25,6 +29,14 @@ var bookTableSchema = new Schema({
   contact:{
     type: String,
     required: true
+  },
+  price:{
+    type: Number,
+    required: true
+  },
+  comments:{
+    type: String,
+    required: false
   },
 });
 
